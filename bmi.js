@@ -11,7 +11,7 @@ app.post ("/", function(req, res) {
     let weight = parseFloat(req.body.weight);
     let height = parseFloat(req.body.height);
 
-    let result = weight / (height * height) ;
+    let result = parseFloat (weight / ((height/100) * (height/100))) ;
 
     if (result < 18.5){
          res.send("The BMI is " + result + " Underweight");
